@@ -12,23 +12,25 @@
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.didelphis</groupId>
     <artifactId>didelphis-root</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
     <name>Didelphis Root Artifact</name>
-    
+
     <organization>
         <name>Didelphis</name>
         <url>http://didelphis.org</url>
     </organization>
-    
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -39,15 +41,17 @@
     </licenses>
 
     <properties>
-        <!-- Core Maven Properties ******************************************-->
+        <!-- Core Maven Properties                                           -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- Testing Artifact Versions **************************************-->
+
+        <!-- Testing Artifact Versions                                       -->
         <junit-jupiter.version>5.0.0-RC2</junit-jupiter.version>
         <junit-platform.version>1.0.0-RC2</junit-platform.version>
-        <!-- Other Artifact Versions ****************************************-->
-        <slf4j.version>1.7.25</slf4j.version>
-        <idea-annotations.version>13.0</idea-annotations.version>
-        <lombok.version>1.16.10</lombok.version>
+
+        <!-- Other Artifact Versions                                         -->
+        <slf4j.version>LATEST</slf4j.version>
+        <idea-annotations.version>LATEST</idea-annotations.version>
+        <lombok.version>LATEST</lombok.version>
     </properties>
 
     <build>
@@ -83,7 +87,8 @@
                 <dependencies>
                     <dependency>
                         <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <artifactId>junit-platform-surefire-provider
+                        </artifactId>
                         <version>${junit-platform.version}</version>
                     </dependency>
                     <dependency>
@@ -111,7 +116,7 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-        
+
         <!-- TESTING DEPENDENCIES ========================================== -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -133,7 +138,7 @@
             <version>${junit-platform.version}</version>
             <scope>test</scope>
         </dependency>
-        
+
         <!-- COMPILE DEPENDENCIES ========================================== -->
         <dependency>
             <groupId>org.jetbrains</groupId>
@@ -149,5 +154,5 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-    
+
 </project>
