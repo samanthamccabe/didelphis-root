@@ -7,8 +7,9 @@ This module specifies common dependencies for testing, logging, and annotations.
 
 #### version 0.3.1
  - Updated dependency versions
+ - Returned to using dependency management
 #### version 0.3.0
- - Updated dependency versions
+ - Updated dependency versions    
  - Added Lombok annotation processor to Maven plugin configuration
 #### version 0.2.0
  - Removal of dependency management from configuration; deemed unnecessary for now
