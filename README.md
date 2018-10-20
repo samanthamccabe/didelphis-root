@@ -5,6 +5,11 @@ This module specifies common dependencies for testing, logging, and annotations.
 
 ### Changelog
 
+#### version 0.3.1
+ - Updated dependency versions
+#### version 0.3.0
+ - Updated dependency versions
+ - Added Lombok annotation processor to Maven plugin configuration
 #### version 0.2.0
  - Removal of dependency management from configuration; deemed unnecessary for now
  - Upgraded JUnit to use `5.0.0RC2`
