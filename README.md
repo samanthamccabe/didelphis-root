@@ -7,6 +7,10 @@ This module specifies common dependencies for testing, logging, and annotations.
 
 #### version 0.3.2
  - Updated dependency versions
+ - Corrected license descriptor in project POM
+ 
+#### version 0.3.2
+ - Updated dependency versions
  - Changed license to [GPL 3.0](https://www.gnu.org/licenses)
  
 #### version 0.3.1
