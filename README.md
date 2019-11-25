@@ -5,6 +5,10 @@ This module specifies common dependencies for testing, logging, and annotations.
 
 ### Changelog
 
+#### version 0.4.0
+ - Added Log4J 2
+ - Removed Maven Surefire plugin from common build configuration
+
 #### version 0.3.3
  - Updated dependency versions
  - Corrected license descriptor in project POM

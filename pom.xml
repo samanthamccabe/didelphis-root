@@ -18,154 +18,177 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+		 xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.didelphis</groupId>
-    <artifactId>didelphis-root</artifactId>
-    <version>0.3.3</version>
+	<groupId>org.didelphis</groupId>
+	<artifactId>didelphis-root</artifactId>
+	<version>0.4.0</version>
 
-    <packaging>pom</packaging>
+	<packaging>pom</packaging>
 
-    <name>Didelphis Root Artifact</name>
+	<name>Didelphis Root Artifact</name>
 
-    <organization>
-        <name>Didelphis</name>
-        <url>http://didelphis.org</url>
-    </organization>
+	<url>https://github.com/samanthamccabe/didelphis-root</url>
 
-    <licenses>
-        <license>
-            <name>GNU General Public License, Version 3.0</name>
-            <url>https://www.gnu.org/licenses/gpl-3.0-standalone.html</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+	<organization>
+		<name>Didelphis</name>
+		<url>http://didelphis.org</url>
+	</organization>
 
-    <properties>
-        <!-- Core Maven Properties -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        
-        <!-- Testing Artifact Versions -->
-        <junit-jupiter.version>5.4.2</junit-jupiter.version>
-        <junit-launcher.version>1.4.2</junit-launcher.version>
+	<licenses>
+		<license>
+			<name>GNU General Public License, Version 3.0</name>
+			<url>https://www.gnu.org/licenses/gpl-3.0-standalone.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-        <!-- Other Artifact Versions -->
-        <idea-annotations.version>17.0.0</idea-annotations.version>
-        <lombok.version>1.18.8</lombok.version>
+	<properties>
+		<!-- Core Maven Properties -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Maven Plugin Version -->
-        <maven.compiler.version>3.8.1</maven.compiler.version>
-        <junit.surefire.version>1.3.2</junit.surefire.version>
-        <maven.source.version>3.1.0</maven.source.version>
-        <maven.surefire.version>2.22.2</maven.surefire.version>
+		<!-- Testing Artifact Versions -->
+		<junit-jupiter.version>5.5.2</junit-jupiter.version>
+		<junit-launcher.version>1.5.2</junit-launcher.version>
 
-        <!-- Lombok Processor -->
-        <annotation.processor.class>
-            lombok.launch.AnnotationProcessorHider$AnnotationProcessor
-        </annotation.processor.class>
-    </properties>
+		<!-- Logging Artifact Versions-->
+		<log4j.version>2.12.1</log4j.version>
 
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.version}</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <encoding>UTF-8</encoding>
-                    <annotationProcessors>
-                        <annotationProcessor>
-                            ${annotation.processor.class}
-                        </annotationProcessor>
-                    </annotationProcessors>
-                </configuration>
-            </plugin>
+		<!-- Annotation Artifact Versions -->
+		<idea-annotations.version>17.0.0</idea-annotations.version>
+		<lombok.version>1.18.10</lombok.version>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>${maven.source.version}</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+		<!-- Maven Plugin Version -->
+		<maven.compiler.version>3.8.1</maven.compiler.version>
+		<maven.source.version>3.1.0</maven.source.version>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefire.version}</version>
-            </plugin>
-        </plugins>
-    </build>
+		<!-- Lombok Processor -->
+		<annotation.processor.class>
+			lombok.launch.AnnotationProcessorHider$AnnotationProcessor
+		</annotation.processor.class>
+	</properties>
 
-    <dependencyManagement>
-        <dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+					<annotationProcessors>
+						<annotationProcessor>
+							${annotation.processor.class}
+						</annotationProcessor>
+					</annotationProcessors>
+				</configuration>
+			</plugin>
 
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven.source.version}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
-            <dependency>
-                <groupId>org.junit.platform</groupId>
-                <artifactId>junit-platform-launcher</artifactId>
-                <version>${junit-launcher.version}</version>
-                <scope>test</scope>
-            </dependency>
+	<dependencyManagement>
+		<dependencies>
+			<!-- TESTING DEPENDENCIES ************************************** -->
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-engine</artifactId>
+				<version>${junit-jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
 
-            <dependency>
-                <groupId>org.jetbrains</groupId>
-                <artifactId>annotations</artifactId>
-                <version>${idea-annotations.version}</version>
-                <scope>compile</scope>
-            </dependency>
+			<dependency>
+				<groupId>org.junit.platform</groupId>
+				<artifactId>junit-platform-launcher</artifactId>
+				<version>${junit-launcher.version}</version>
+				<scope>test</scope>
+			</dependency>
 
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <scope>compile</scope>
-            </dependency>
+			<!-- ANNOTATIONS DEPENDENCIES ********************************** -->
+			<dependency>
+				<groupId>org.jetbrains</groupId>
+				<artifactId>annotations</artifactId>
+				<version>${idea-annotations.version}</version>
+				<scope>compile</scope>
+			</dependency>
 
-        </dependencies>
-    </dependencyManagement>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<scope>compile</scope>
+			</dependency>
 
-    <!-- Shared Project Dependencies -->
-    <dependencies>
+			<!-- LOGGING DEPENDENCIES ************************************** -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
 
-        <!-- TESTING DEPENDENCIES ========================================== -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-        </dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
 
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-        </dependency>
+		</dependencies>
+	</dependencyManagement>
 
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-        </dependency>
+	<!-- Shared Project Dependencies -->
+	<dependencies>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
+		<!-- TESTING DEPENDENCIES ========================================== -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+		</dependency>
 
-    </dependencies>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+		</dependency>
+
+		<!-- ANNOTATIONS DEPENDENCIES ********************************** -->
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<!-- LOGGING DEPENDENCIES ************************************** -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+
+	</dependencies>
 
 </project>
